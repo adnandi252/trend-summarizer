@@ -2,11 +2,13 @@ import os
 import sys
 import nltk
 
-import spaces
-
-@spaces.GPU
-def dummy_gpu_task():
-    return "Bypass ZeroGPU detection"
+try:
+    import spaces
+    @spaces.GPU
+    def dummy_gpu_task():
+        return "Bypass ZeroGPU detection"
+except ImportError:
+    pass
 
 # Pre-download NLTK requirements on startup
 print("Downloading NLTK requirements...")

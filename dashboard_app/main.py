@@ -3,6 +3,14 @@ import sys
 import json
 import asyncio
 import logging
+
+try:
+    import spaces
+    @spaces.GPU
+    def dummy_gpu_task_main():
+        return "Bypass ZeroGPU detection in main"
+except ImportError:
+    pass
 from typing import List, Optional, Dict, Any
 from datetime import datetime, timedelta
 from fastapi import FastAPI, BackgroundTasks, HTTPException, Query, Response, status
