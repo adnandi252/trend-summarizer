@@ -1,5 +1,12 @@
 import os
 import sys
+
+# Save the original port allocated by Hugging Face
+PORT = int(os.environ.get("PORT", 7860))
+# Remove PORT from environment to prevent Gradio 5 from launching a duplicate server on it
+if "PORT" in os.environ:
+    del os.environ["PORT"]
+
 import nltk
 import gradio as gr
 
@@ -99,6 +106,5 @@ app = gr.mount_gradio_app(fastapi_app, demo, path="/gradio")
 # HF Spaces runs `python app.py` directly. Uvicorn serves everything.
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.environ.get("PORT", 7860))
-    print(f"Starting server on port {port}...")
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    print(f"Starting server on port {PORT}...")
+    uvicorn.run(app, host="0.0.0.0", port=PORT)
