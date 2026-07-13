@@ -109,7 +109,6 @@ async def run_weekly_scheduler():
                         periods = db.get_analysis_periods(project_id)
                         if period_str not in periods:
                             logger.info(f"Penyaringan otomatis mingguan terpicu untuk proyek {project_id} periode {period_str}")
-                            import asyncio
                             asyncio.create_task(
                                 asyncio.to_thread(
                                     execute_analyze_task,
