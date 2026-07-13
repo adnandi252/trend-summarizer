@@ -1,18 +1,13 @@
 import os
 import sys
-
-# Save the original port allocated by Hugging Face
-PORT = int(os.environ.get("PORT", 7860))
-# Remove PORT from environment to prevent Gradio 5 from launching a duplicate server on it
-if "PORT" in os.environ:
-    del os.environ["PORT"]
-
 import nltk
 import gradio as gr
 
+# --- Configuration ---
+PORT = int(os.environ.get("PORT", 7860))
+IS_HF_SPACE = bool(os.environ.get("SPACE_ID"))
+
 # --- ZeroGPU compatibility ---
-# HF Spaces with Gradio SDK + ZeroGPU requires at least one @spaces.GPU
-# function that is wired to a Gradio component so ZeroGPU can detect it.
 try:
     import spaces
     _SPACES_AVAILABLE = True
@@ -32,21 +27,20 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 # --- Import the FastAPI application ---
 from dashboard_app.main import app as fastapi_app  # noqa: E402
 
-# --- Define a GPU-decorated function wired to Gradio ---
-# ZeroGPU needs to see a @spaces.GPU function connected to the Gradio app.
+# --- GPU-decorated function wired to Gradio ---
 def _gpu_health_check():
-    """Health check function — GPU is allocated on-demand when called."""
+    """Health check — GPU is allocated on-demand when called."""
     return "✅ GPU tersedia dan siap digunakan."
 
 if _SPACES_AVAILABLE:
     _gpu_health_check = spaces.GPU(_gpu_health_check)
 
-# --- Build the Gradio Blocks app ---
-# This serves as the shell that HF Spaces expects.
-# It auto-redirects users to the real FastAPI dashboard.
+# --- Gradio Blocks interface ---
+# Serves as the "shell" that HF Spaces expects.
+# Auto-redirects users to the real FastAPI dashboard.
 
 REDIRECT_HTML = """
-<div id="landing-container" style="
+<div style="
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     min-height:80vh; font-family:'Inter',system-ui,sans-serif; background:#0f172a;
     color:#e2e8f0; text-align:center; padding:2rem;
@@ -83,6 +77,12 @@ REDIRECT_HTML = """
         </p>
     </div>
 </div>
+<script>
+    // Auto-redirect to dashboard after 2 seconds
+    setTimeout(function() {
+        window.top.location.href = '/dashboard.html';
+    }, 2000);
+</script>
 """
 
 with gr.Blocks(
@@ -91,20 +91,34 @@ with gr.Blocks(
     css="body { margin: 0; padding: 0; background: #0f172a; }"
 ) as demo:
     gr.HTML(REDIRECT_HTML)
-    # Hidden button to wire the @spaces.GPU function into Gradio's event system
+    # Hidden button to wire @spaces.GPU into Gradio's event system
     with gr.Row(visible=False):
         gpu_btn = gr.Button("GPU Check")
         gpu_output = gr.Textbox()
         gpu_btn.click(fn=_gpu_health_check, inputs=None, outputs=gpu_output)
 
-# --- Mount Gradio onto the FastAPI app ---
-# This keeps all FastAPI routes (/api/*, /dashboard.html, static files)
-# functional while Gradio handles ZeroGPU detection at "/"
-app = gr.mount_gradio_app(fastapi_app, demo, path="/gradio")
-
-# --- Entry point ---
-# HF Spaces runs `python app.py` directly. Uvicorn serves everything.
+# --- Server startup ---
 if __name__ == "__main__":
-    import uvicorn
     print(f"Starting server on port {PORT}...")
-    uvicorn.run(app, host="0.0.0.0", port=PORT)
+
+    # Launch Gradio server (handles port binding — only ONE server)
+    # prevent_thread_lock=True so we can mount FastAPI after
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=PORT,
+        prevent_thread_lock=True,
+        share=False,
+    )
+
+    # Mount the entire FastAPI app as a sub-application on Gradio's
+    # internal FastAPI. Gradio's own routes (/gradio-api/*, etc.) take
+    # priority because they are registered first. Unmatched paths
+    # (our /api/*, /dashboard.html, /static/*, etc.) fall through to
+    # the FastAPI sub-app.
+    demo.app.mount("/", fastapi_app)
+
+    print("✅ FastAPI routes mounted on Gradio server. Dashboard is ready.")
+
+    # Keep the main thread alive (Gradio server runs in background thread)
+    import threading
+    threading.Event().wait()
