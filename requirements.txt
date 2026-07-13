@@ -19,3 +19,4 @@ feedparser
 requests
 python-multipart
 jinja2
+spaces
