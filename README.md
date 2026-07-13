@@ -1,3 +1,12 @@
+---
+title: Trend Summarizer AI
+emoji: 📈
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
+
 # Trend Summarizer AI
 
 ## Local Development
