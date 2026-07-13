@@ -1,0 +1,27 @@
+# Secrets and Environment
+.env
+
+# Python compilation and caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+
+# Database files and scrapings
+dashboard_app/data/*.db
+dashboard_app/data/project_*
+data/*
+!data/stem_cache.json
+
+# Exclude unused modules from Git push
+backend/
+evaluation/
+plans/
+scratch/
+data_analysis.ipynb

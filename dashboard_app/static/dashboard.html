@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TrendAI - Executive Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Hanken+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="/static/style.css" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .executive-border {
+            border-left: 4px solid #006591;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "sustainability-green": "#22C55E",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#002113",
+                    "text-muted": "#64748B",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "secondary-container": "#39b8fd",
+                    "primary-container": "#131b2e",
+                    "surface-variant": "#e0e3e5",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-background": "#191c1e",
+                    "secondary-fixed-dim": "#89ceff",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-secondary-container": "#004666",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "inverse-primary": "#bec6e0",
+                    "secondary-fixed": "#c9e6ff",
+                    "on-primary-container": "#7c839b",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary": "#006591",
+                    "tertiary-fixed": "#6ffbbe",
+                    "behavior-orange": "#F59E0B",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#d8dadc",
+                    "inverse-surface": "#2d3133",
+                    "background": "#f7f9fb",
+                    "primary": "#000000",
+                    "on-secondary-fixed-variant": "#004c6e",
+                    "tertiary": "#000000",
+                    "on-surface": "#191c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#45464d",
+                    "on-primary-fixed": "#131b2e",
+                    "border-subtle": "#E2E8F0",
+                    "marketing-purple": "#8B5CF6",
+                    "on-tertiary-container": "#009668",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-tint": "#565e74",
+                    "outline-variant": "#c6c6cd",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "primary-fixed": "#dae2fd",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-bright": "#f7f9fb",
+                    "surface": "#f7f9fb",
+                    "outline": "#76777d",
+                    "surface-container": "#eceef0",
+                    "on-tertiary-fixed": "#002113",
+                    "on-secondary-fixed": "#001e2f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "card-padding": "24px",
+                    "stack-md": "16px",
+                    "container-max": "1440px",
+                    "stack-lg": "32px",
+                    "stack-sm": "8px",
+                    "gutter": "24px",
+                    "margin-page": "40px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Hanken Grotesk"],
+                    "label-md": ["JetBrains Mono"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- Side Navigation Bar -->
+<aside class="bg-surface-container-lowest dark:bg-primary-container h-screen w-64 fixed left-0 top-0 border-r border-border-subtle dark:border-outline-variant flex flex-col h-full p-stack-md z-50">
+<div class="mb-stack-lg">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">TrendAI</h1>
+<p class="font-body-sm text-body-sm text-text-muted">Executive Briefing</p>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed font-bold bg-surface-container-low dark:bg-surface-variant transition-colors" href="/dashboard.html">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors" href="/trend_discovery.html">
+<span class="material-symbols-outlined">explore</span>
+                Trend Discovery
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors" href="/executive_brief.html">
+<span class="material-symbols-outlined">description</span>
+                Executive Briefs
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors" href="/news_management.html">
+<span class="material-symbols-outlined">newspaper</span>
+                Manajemen Berita
+            </a>
+<a id="nav-settings" class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors" href="javascript:void(0)">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+    </aside>
+<!-- Top App Bar -->
+<header class="bg-surface dark:bg-background border-b border-border-subtle dark:border-outline-variant flex justify-between items-center h-16 px-margin-page ml-64 sticky top-0 z-40">
+<div class="flex items-center gap-gutter flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-sm">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-transparent border border-border-subtle rounded-lg font-body-sm text-body-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all" placeholder="Cari tren atau kata kunci..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+                    <span class="font-body-sm text-body-sm font-bold text-primary">Dasbor TrendAI</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-margin-page">
+<!-- Dashboard Header & Filters -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-md mb-stack-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Dasbor Analisis Tren</h2>
+<p id="signals-count-description" class="font-body-md text-body-md text-text-muted">Menganalisis 0 artikel dari berbagai sumber industri.</p>
+</div>
+                <div class="flex items-center gap-stack-sm">
+                    <!-- Period Filter Dropdown -->
+                    <div class="flex items-center gap-2 bg-surface-container-low border border-border-subtle rounded-lg px-3 py-1.5 shadow-sm">
+                        <span class="font-label-sm text-text-muted">Periode Analisis:</span>
+                        <div class="relative flex items-center">
+                            <select id="dashboard-period-selector" class="appearance-none bg-transparent border-none pr-8 py-0 font-label-sm text-label-sm text-primary outline-none focus:ring-0 cursor-pointer w-48">
+                                <option value="">Memuat periode...</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted text-sm">expand_more</span>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <select id="project-selector-dashboard" class="project-selector appearance-none bg-surface-container-low border border-border-subtle rounded-lg pl-4 pr-10 py-2 font-label-md text-label-md text-primary outline-none focus:ring-2 focus:ring-secondary transition-all">
+                            <!-- Populated by JS -->
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted">expand_more</span>
+                    </div>
+                </div>
+</div>
+<!-- Metric Indicators Row -->
+<div id="metrics-indicators-row" class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-stack-lg">
+<div class="bg-white border border-border-subtle p-card-padding rounded-xl">
+<p class="font-label-sm text-label-sm text-text-muted mb-1">ARTIKEL DIPROSES</p>
+<div class="flex items-end gap-2">
+<span id="metric-val-processed" class="font-headline-md text-headline-md text-primary">-</span>
+<span class="text-sustainability-green font-label-sm text-label-sm mb-1">Artikel</span>
+</div>
+</div>
+<div class="bg-white border border-border-subtle p-card-padding rounded-xl">
+<p class="font-label-sm text-label-sm text-text-muted mb-1">SUMBER DATA</p>
+<div class="flex items-end gap-2">
+<span id="metric-val-sources" class="font-headline-md text-headline-md text-primary">-</span>
+<span class="font-label-sm text-label-sm mb-1 text-text-muted">Portal Unik</span>
+</div>
+</div>
+<div class="bg-white border border-border-subtle p-card-padding rounded-xl">
+<p class="font-label-sm text-label-sm text-text-muted mb-1">KATEGORI TREN</p>
+<div class="flex items-end gap-2">
+<span id="metric-val-trends" class="font-headline-md text-headline-md text-primary">-</span>
+<span class="font-label-sm text-label-sm mb-1 text-text-muted">Kluster AI</span>
+</div>
+</div>
+</div>
+<!-- Main Bento Grid (data-driven) -->
+<div id="main-bento-grid" class="grid grid-cols-12 gap-gutter">
+<!-- Executive Summary Card (Full Width Column) -->
+<div class="col-span-12 lg:col-span-8 space-y-gutter">
+<div class="bg-white border border-border-subtle rounded-xl overflow-hidden shadow-sm executive-border">
+<div class="bg-surface-container-low px-card-padding py-3 border-b border-border-subtle flex justify-between items-center">
+<h3 class="font-label-md text-label-md font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">auto_awesome</span>
+                            RINGKASAN EKSEKUTIF
+                        </h3>
+<span id="executive-summary-timestamp" class="font-label-sm text-label-sm text-text-muted">Memuat...</span>
+</div>
+<div id="executive-summary-text-container" class="p-card-padding">
+<p class="font-body-lg text-body-lg text-primary leading-relaxed mb-stack-md">
+                            Loading executive summary...
+                        </p>
+<div class="mt-stack-lg flex gap-4">
+<div class="flex-1 p-4 bg-surface-container-lowest border border-border-subtle rounded-lg">
+<p class="font-label-sm text-label-sm text-sustainability-green font-bold mb-1">PELUANG UTAMA</p>
+<p id="primary-opportunity-text" class="font-body-sm text-body-sm">Loading...</p>
+</div>
+<div class="flex-1 p-4 bg-surface-container-lowest border border-border-subtle rounded-lg">
+<p class="font-label-sm text-label-sm text-error font-bold mb-1">PERGESERAN PERILAKU / RISIKO KUNCI</p>
+<p id="critical-risk-text" class="font-body-sm text-body-sm">Loading...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Trending Topics Visualization -->
+<div class="bg-white border border-border-subtle rounded-xl p-card-padding shadow-sm">
+<div class="flex justify-between items-center mb-stack-lg">
+<h3 class="font-label-md text-label-md font-bold text-primary">VOLUME ARTIKEL PER KATEGORI TREN</h3>
+</div>
+<!-- Simplified Bar Chart UI -->
+<div id="trending-topics-chart-container" class="space-y-6">
+<p class="font-body-sm text-text-muted">Memuat data volume tren...</p>
+</div>
+</div>
+</div>
+<!-- Industry Insight Monitoring Panel -->
+<div class="col-span-12 lg:col-span-4 h-full">
+<div class="bg-white border border-border-subtle rounded-xl shadow-sm h-full flex flex-col">
+<div class="px-card-padding py-4 border-b border-border-subtle">
+<h3 class="font-label-md text-label-md font-bold text-primary">KARTU WAWASAN TREN</h3>
+</div>
+<div id="latest-insights-list-container" class="p-4 space-y-4 overflow-y-auto max-h-[800px] flex-grow">
+<p class="font-body-sm text-text-muted">Memuat wawasan...</p>
+</div>
+<button class="w-full py-4 bg-surface-container-low text-secondary font-label-md text-label-md hover:bg-surface-container-high transition-colors border-t border-border-subtle" onclick="window.location.href='/trend_discovery.html'">
+                        Lihat Semua Tren
+                    </button>
+</div>
+</div>
+
+</div>
+</main>
+<!-- Footer -->
+
+<script src="/static/common.js"></script>
+<script src="/static/dashboard.js"></script>
+</body></html>>

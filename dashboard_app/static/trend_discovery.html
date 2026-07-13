@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TrendAI - Eksplorasi Tren</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Hanken+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="/static/style.css" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid #E2E8F0;
+        }
+        .line-chart-gradient {
+            background: linear-gradient(180deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0) 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "sustainability-green": "#22C55E",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#002113",
+                        "text-muted": "#64748B",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "secondary-container": "#39b8fd",
+                        "primary-container": "#131b2e",
+                        "surface-variant": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-background": "#191c1e",
+                        "secondary-fixed-dim": "#89ceff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-secondary-container": "#004666",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "inverse-primary": "#bec6e0",
+                        "secondary-fixed": "#c9e6ff",
+                        "on-primary-container": "#7c839b",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#006591",
+                        "tertiary-fixed": "#6ffbbe",
+                        "behavior-orange": "#F59E0B",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "inverse-surface": "#2d3133",
+                        "background": "#f7f9fb",
+                        "primary": "#000000",
+                        "on-secondary-fixed-variant": "#004c6e",
+                        "tertiary": "#000000",
+                        "on-surface": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#45464d",
+                        "on-primary-fixed": "#131b2e",
+                        "border-subtle": "#E2E8F0",
+                        "marketing-purple": "#8B5CF6",
+                        "on-tertiary-container": "#009668",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-tint": "#565e74",
+                        "outline-variant": "#c6c6cd",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "primary-fixed": "#dae2fd",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-bright": "#f7f9fb",
+                        "surface": "#f7f9fb",
+                        "outline": "#76777d",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed": "#002113",
+                        "on-secondary-fixed": "#001e2f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "card-padding": "24px",
+                        "stack-md": "16px",
+                        "container-max": "1440px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "gutter": "24px",
+                        "margin-page": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-md": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["10px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background font-body-md text-on-surface">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest border-r border-border-subtle flex flex-col h-full p-stack-md z-50">
+<div class="mb-stack-lg">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">TrendAI</h1>
+<p class="font-label-sm text-label-sm text-text-muted">Eksplorasi Tren</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted hover:bg-surface-container-low transition-colors group" href="/dashboard.html">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary font-bold bg-surface-container-low transition-colors" href="/trend_discovery.html">
+<span class="material-symbols-outlined text-xl">explore</span>
+<span class="font-body-md">Trend Discovery</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted hover:bg-surface-container-low transition-colors group" href="/executive_brief.html">
+<span class="material-symbols-outlined text-xl">description</span>
+<span class="font-body-md">Executive Briefs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted hover:bg-surface-container-low transition-colors group" href="/news_management.html">
+<span class="material-symbols-outlined text-xl">newspaper</span>
+<span class="font-body-md">Manajemen Berita</span>
+</a>
+<a id="nav-settings" class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted hover:bg-surface-container-low transition-colors group" href="javascript:void(0)">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+</nav>
+    </aside>
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-16 px-margin-page ml-64 bg-surface border-b border-border-subtle fixed top-0 right-0 left-0 z-40">
+<div class="flex items-center gap-6">
+<span id="discovery-page-heading" class="font-headline-md text-headline-md font-bold text-primary">Ringkasan Tren</span>
+<div class="relative">
+<select id="project-selector-discovery" class="project-selector appearance-none bg-surface-container-low border border-border-subtle rounded-lg pl-4 pr-10 py-2 font-label-md text-label-md text-primary outline-none focus:ring-2 focus:ring-secondary transition-all">
+<!-- Populated by JS -->
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted">expand_more</span>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 mt-16 p-margin-page">
+<div class="max-w-container-max mx-auto">
+<!-- Hero Summary Section -->
+<section id="trend-hero-section" class="mb-stack-lg">
+<div class="flex items-center gap-3 mb-stack-sm">
+<span id="trend-badge-label" class="px-2 py-1 bg-sustainability-green/10 text-sustainability-green font-label-md rounded text-label-md">TREN UTAMA</span>
+<span id="trend-last-updated" class="text-text-muted font-body-sm">Memuat data...</span>
+</div>
+<h2 id="trend-hero-title" class="font-display-lg text-display-lg text-primary mb-stack-md">Memilih tren...</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+            <div class="bg-white border-l-4 border-sustainability-green p-card-padding border border-border-subtle shadow-sm flex flex-col justify-between">
+                <div>
+                    <p class="font-label-md text-text-muted mb-1">JUMLAH ARTIKEL</p>
+                    <h3 id="kpi-aggregate-interest" class="font-headline-lg text-headline-lg text-primary">-</h3>
+                </div>
+                <p id="kpi-article-sources" class="font-body-sm text-sustainability-green mt-2 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">article</span>
+                    Portal sumber
+                </p>
+            </div>
+            <div class="bg-white p-card-padding border border-border-subtle shadow-sm">
+                <p class="font-label-md text-text-muted mb-1">KATA KUNCI UTAMA</p>
+                <h3 id="kpi-sentiment" class="font-headline-lg text-headline-lg text-primary">-</h3>
+                <p id="kpi-sentiment-desc" class="font-body-sm text-text-muted mt-2">Topik dominan dalam klaster</p>
+            </div>
+        </div>
+</section>
+<!-- Bento Content Layout -->
+<div class="bento-grid">
+<!-- Trend Narrative (Executive Brief) -->
+<div class="col-span-12 lg:col-span-8 bg-white border border-border-subtle p-card-padding">
+<div class="flex justify-between items-center mb-stack-lg border-b border-border-subtle pb-4">
+<h3 class="font-headline-md text-headline-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+                            Ringkasan Analisis
+                        </h3>
+<span class="text-label-sm font-label-sm text-text-muted">NARASI AI</span>
+</div>
+<article class="prose prose-slate max-w-none">
+<div id="trend-narrative-container">
+<p class="font-body-lg text-body-lg text-on-surface mb-stack-md leading-relaxed">
+                            Loading trend analysis...
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg mt-stack-lg">
+<div class="space-y-4">
+<h4 class="font-headline-md text-body-md font-bold text-primary">Kata Kunci Strategis</h4>
+<ul id="key-strategic-drivers-list" class="space-y-3 font-body-sm text-on-surface-variant">
+<!-- Populated by JS -->
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline-md text-body-md font-bold text-primary">Peluang Pasar</h4>
+<ul id="actionable-insights-list" class="space-y-3 font-body-sm text-on-surface-variant">
+<!-- Populated by JS -->
+</ul>
+</div>
+</div>
+</article>
+</div>
+<!-- Trend Cluster -->
+<div class="col-span-12 lg:col-span-4 bg-white border border-border-subtle p-card-padding">
+<h3 class="font-headline-md text-headline-md mb-stack-lg">Kategori Terkait</h3>
+<div id="related-nodes-list" class="space-y-4">
+<!-- Dynamic Nodes -->
+</div>
+</div>
+<!-- Source Articles -->
+<div class="col-span-12 lg:col-span-12 bg-white border border-border-subtle p-card-padding">
+<div class="flex justify-between items-center mb-stack-lg">            <h3 class="font-headline-md text-headline-md">Artikel Pendukung</h3>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-border-subtle">
+<th class="pb-3 font-label-md text-label-md text-text-muted">JUDUL ARTIKEL</th>
+<th class="pb-3 font-label-md text-label-md text-text-muted">SUMBER</th>
+<th class="pb-3 font-label-md text-label-md text-text-muted">TANGGAL</th>
+<th class="pb-3 font-label-md text-label-md text-text-muted text-right">AKSI</th>
+</tr>
+</thead>
+<tbody id="supporting-sources-tbody" class="font-body-sm">
+<!-- Populated by JS -->
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+
+<script src="/static/common.js"></script>
+<script src="/static/trend_discovery.js"></script>
+</body></html>

@@ -1,0 +1,17 @@
+.git
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env
+.ipynb_checkpoints
+dashboard_app/data/*.db
+dashboard_app/data/project_*
+data/*
+!data/stem_cache.json
+backend/
+evaluation/
+plans/
+data_analysis.ipynb
+venv/
+.venv/

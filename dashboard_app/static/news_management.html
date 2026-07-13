@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TrendAI - Manajemen Berita</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Hanken+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="/static/style.css" rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .console-container {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "sustainability-green": "#22C55E",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#002113",
+                        "text-muted": "#64748B",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "secondary-container": "#39b8fd",
+                        "primary-container": "#131b2e",
+                        "surface-variant": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-background": "#191c1e",
+                        "secondary-fixed-dim": "#89ceff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-secondary-container": "#004666",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "inverse-primary": "#bec6e0",
+                        "secondary-fixed": "#c9e6ff",
+                        "on-primary-container": "#7c839b",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#006591",
+                        "tertiary-fixed": "#6ffbbe",
+                        "behavior-orange": "#F59E0B",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "inverse-surface": "#2d3133",
+                        "background": "#f7f9fb",
+                        "primary": "#000000",
+                        "on-secondary-fixed-variant": "#004c6e",
+                        "tertiary": "#000000",
+                        "on-surface": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#45464d",
+                        "on-primary-fixed": "#131b2e",
+                        "border-subtle": "#E2E8F0",
+                        "marketing-purple": "#8B5CF6",
+                        "on-tertiary-container": "#009668",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-tint": "#565e74",
+                        "outline-variant": "#c6c6cd",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "primary-fixed": "#dae2fd",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-bright": "#f7f9fb",
+                        "surface": "#f7f9fb",
+                        "outline": "#76777d",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed": "#002113",
+                        "on-secondary-fixed": "#001e2f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "card-padding": "24px",
+                        "stack-md": "16px",
+                        "container-max": "1440px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "gutter": "24px",
+                        "margin-page": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-md": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background font-body-md text-on-background min-h-screen">
+
+    <!-- Side Navigation Bar -->
+    <aside
+        class="bg-surface-container-lowest dark:bg-primary-container h-screen w-64 fixed left-0 top-0 border-r border-border-subtle dark:border-outline-variant flex flex-col p-stack-md z-50">
+        <div class="mb-stack-lg">
+            <h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">TrendAI</h1>
+            <p class="font-body-sm text-body-sm text-text-muted">Manajemen Berita</p>
+        </div>
+        <nav class="flex-grow space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors"
+                href="/dashboard.html">
+                <span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors"
+                href="/trend_discovery.html">
+                <span class="material-symbols-outlined">explore</span>
+                Trend Discovery
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors"
+                href="/executive_brief.html">
+                <span class="material-symbols-outlined">description</span>
+                Executive Briefs
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed font-bold bg-surface-container-low dark:bg-surface-variant transition-colors"
+                href="/news_management.html">
+                <span class="material-symbols-outlined">newspaper</span>
+                Manajemen Berita
+            </a>
+            <a id="nav-settings"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors"
+                href="javascript:void(0)">
+                <span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Top App Bar -->
+    <header
+        class="bg-surface dark:bg-background border-b border-border-subtle dark:border-outline-variant flex justify-between items-center h-16 px-margin-page ml-64 sticky top-0 z-40">
+        <div class="flex items-center gap-gutter flex-1">
+            <span class="font-headline-md text-headline-md font-bold text-primary mr-4">Manajemen Berita</span>
+            <div class="relative">
+                <select id="project-selector-management"
+                    class="project-selector appearance-none bg-surface-container-low border border-border-subtle rounded-lg pl-4 pr-10 py-2 font-label-md text-label-md text-primary outline-none focus:ring-2 focus:ring-secondary transition-all">
+                    <!-- Populated by common.js -->
+                </select>
+                <span
+                    class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted">expand_more</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-stack-md">
+            <span class="font-body-sm text-body-sm font-bold text-primary">Pusat Data</span>
+        </div>
+    </header>
+
+    <!-- Main Content Canvas -->
+    <main class="ml-64 p-margin-page">
+        <div class="max-w-container-max mx-auto space-y-gutter">
+
+            <!-- KPI Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+
+                <!-- Card 1: Total Downloaded -->
+                <div
+                    class="bg-white border border-border-subtle rounded-xl p-card-padding shadow-sm flex items-center justify-between">
+                    <div>
+                        <p class="font-label-sm text-text-muted uppercase mb-1">Total Artikel Terunduh</p>
+                        <h4 id="kpi-total-articles" class="font-display-lg text-display-lg text-primary font-bold">0
+                        </h4>
+                        <p class="font-body-sm text-[11px] text-text-muted mt-1">Dari seluruh kata kunci & waktu</p>
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded-full bg-sky-50 text-sky-700 flex items-center justify-center border border-sky-100">
+                        <span class="material-symbols-outlined text-2xl">newspaper</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: New Today with Growth -->
+                <div
+                    class="bg-white border border-border-subtle rounded-xl p-card-padding shadow-sm flex items-center justify-between">
+                    <div class="flex-grow">
+                        <p class="font-label-sm text-text-muted uppercase mb-1">Artikel Baru Hari Ini</p>
+                        <div class="flex items-baseline gap-2">
+                            <h4 id="kpi-today-articles" class="font-display-lg text-display-lg text-primary font-bold">0
+                            </h4>
+                            <span id="kpi-today-growth-badge"
+                                class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] font-bold font-label-sm">
+                                <!-- Populated by JS -->
+                            </span>
+                        </div>
+                        <p id="kpi-yesterday-comparison" class="font-body-sm text-[11px] text-text-muted mt-1">0 artikel
+                            kemarin</p>
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center border border-emerald-100">
+                        <span class="material-symbols-outlined text-2xl">today</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Top Trend Category -->
+                <div
+                    class="bg-white border border-border-subtle rounded-xl p-card-padding shadow-sm flex items-center justify-between">
+                    <div class="max-w-[75%]">
+                        <p class="font-label-sm text-text-muted uppercase mb-1">Kategori Utama</p>
+                        <h4 id="kpi-top-category"
+                            class="font-body-md font-bold text-primary truncate leading-snug mt-1 text-md"
+                            style="font-size: 16px;">-</h4>
+                        <p id="kpi-top-category-count" class="font-body-sm text-[11px] text-text-muted mt-1">Belum
+                            terklasifikasi</p>
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded-full bg-purple-50 text-purple-700 flex items-center justify-center border border-purple-100">
+                        <span class="material-symbols-outlined text-2xl">trending_up</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controls & Log Console Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+
+                <!-- Scraper & Analyzer Cards (8 cols span) -->
+                <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+
+                    <!-- 1. Scraper Control Card -->
+                    <div
+                        class="bg-white border border-border-subtle rounded-xl p-card-padding shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-2 mb-4 border-b border-border-subtle pb-2">
+                                <span class="material-symbols-outlined text-secondary">cloud_download</span>
+                                <h3 class="font-label-md text-label-md font-bold text-primary">1. TARIK ARTIKEL BERITA
+                                </h3>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex flex-col gap-1">
+                                    <label for="scrape-limit" class="font-label-sm text-text-muted">Batas Berita per
+                                        Kata Kunci:</label>
+                                    <select id="scrape-limit"
+                                        class="bg-surface-container-low border border-border-subtle rounded-lg px-3 py-2 font-body-sm outline-none focus:ring-2 focus:ring-secondary transition-all">
+                                        <option value="3">3 Artikel</option>
+                                        <option value="5" selected>5 Artikel</option>
+                                        <option value="10">10 Artikel</option>
+                                        <option value="15">15 Artikel</option>
+                                        <option value="20">20 Artikel</option>
+                                    </select>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <label for="scrape-range" class="font-label-sm text-text-muted">Rentang Waktu Terbit
+                                        (Google News):</label>
+                                    <select id="scrape-range"
+                                        class="bg-surface-container-low border border-border-subtle rounded-lg px-3 py-2 font-body-sm outline-none focus:ring-2 focus:ring-secondary transition-all">
+                                        <option value="any" selected>Semua Waktu</option>
+                                        <option value="1d">24 Jam Terakhir</option>
+                                        <option value="7d">7 Hari Terakhir</option>
+                                        <option value="30d">30 Hari Terakhir</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="trigger-scrape-btn"
+                            class="w-full mt-6 py-2.5 bg-secondary text-white font-label-md rounded-lg hover:opacity-90 transition-all font-bold flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-lg">play_arrow</span>
+                            Mulai Tarik Berita
+                        </button>
+                    </div>
+
+                    <!-- 2. AI Analyzer Control Card -->
+                    <div
+                        class="bg-white border border-border-subtle rounded-xl p-card-padding shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-2 mb-4 border-b border-border-subtle pb-2">
+                                <span class="material-symbols-outlined text-sustainability-green">auto_awesome</span>
+                                <h3 class="font-label-md text-label-md font-bold text-primary">2. ANALISIS KLASTER TREN
+                                    AI</h3>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex flex-col gap-1">
+                                    <label for="analyze-source" class="font-label-sm text-text-muted">Model Generative
+                                        AI:</label>
+                                    <select id="analyze-source"
+                                        class="bg-surface-container-low border border-border-subtle rounded-lg px-3 py-2 font-body-sm outline-none focus:ring-2 focus:ring-secondary transition-all">
+                                        <option value="groq" selected>Groq API</option>
+                                        <option value="local">Model T5 Lokal</option>
+                                    </select>
+                                </div>
+                                <div class="flex flex-col gap-1" id="analyze-model-group">
+                                    <label for="analyze-model" class="font-label-sm text-text-muted">Model ID:</label>
+                                    <select id="analyze-model"
+                                        class="bg-surface-container-low border border-border-subtle rounded-lg px-3 py-2 font-body-sm outline-none focus:ring-2 focus:ring-secondary transition-all">
+                                        <option value="test-1" selected>Test-1 Model</option>
+                                    </select>
+                                </div>
+                                <!-- Start & End Date configure news to process -->
+                                <div class="grid grid-cols-2 gap-2 pt-1 border-t border-slate-100 mt-2">
+                                    <div class="flex flex-col gap-1">
+                                        <label for="analyze-start-date" class="font-label-sm text-text-muted">Tanggal
+                                            Mulai:</label>
+                                        <input type="date" id="analyze-start-date"
+                                            class="bg-surface-container-low border border-border-subtle rounded-lg px-3 py-1.5 font-body-sm outline-none focus:ring-2 focus:ring-secondary transition-all" />
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <label for="analyze-end-date" class="font-label-sm text-text-muted">Tanggal
+                                            Akhir:</label>
+                                        <input type="date" id="analyze-end-date"
+                                            class="bg-surface-container-low border border-border-subtle rounded-lg px-3 py-1.5 font-body-sm outline-none focus:ring-2 focus:ring-secondary transition-all" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="trigger-analyze-btn"
+                            class="w-full mt-4 py-2.5 bg-sustainability-green text-white font-label-md rounded-lg hover:opacity-90 transition-all font-bold flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-lg">cognition</span>
+                            Mulai Analisis Tren
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- 3. Console Logs Card (4 cols span) -->
+                <div class="lg:col-span-4">
+                    <div
+                        class="bg-white border border-border-subtle rounded-xl p-card-padding shadow-sm h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4 border-b border-border-subtle pb-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-behavior-orange">terminal</span>
+                                    <h3 class="font-label-md text-label-md font-bold text-primary">LOG EKSEKUSI PIPELINE
+                                    </h3>
+                                </div>
+                                <span id="pipeline-status-badge"
+                                    class="px-2 py-0.5 rounded text-[10px] font-bold font-label-sm uppercase bg-slate-100 text-slate-700 capitalize">
+                                    draft
+                                </span>
+                            </div>
+                            <div id="pipeline-console" class="console-box h-[230px] rounded-lg">
+                                <div class="console-line">[info] Menunggu jalannya proses pipeline scraping atau
+                                    analisis...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- News Database / Table Section -->
+            <div class="bg-white border border-border-subtle rounded-xl shadow-sm overflow-hidden">
+
+                <!-- Table Toolbar Filter -->
+                <div class="bg-surface-container-low border-b border-border-subtle px-card-padding py-4">
+                    <div class="flex items-center gap-4">
+                        <div>
+                            <h3 class="font-label-md text-label-md font-bold text-primary uppercase">Daftar Artikel
+                                Berita Terunduh</h3>
+                        </div>
+                        <button id="refresh-articles-btn"
+                            class="flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-slate-50 text-slate-700 rounded-lg border border-slate-200 font-label-sm text-[11px] font-bold shadow-sm transition-all active:scale-95">
+                            <span class="material-symbols-outlined text-xs">refresh</span>
+                            Refresh
+                        </button>
+                    </div>
+
+                    <!-- Filters layout -->
+                    <div class="flex flex-wrap items-center gap-3">
+
+                        <!-- Search -->
+                        <div class="relative w-48">
+                            <span
+                                class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-text-muted text-sm">search</span>
+                            <input type="text" id="article-search" placeholder="Cari judul/sumber..."
+                                class="w-full pl-8 pr-3 py-1.5 bg-white border border-border-subtle rounded-lg font-body-sm text-body-sm outline-none focus:ring-2 focus:ring-secondary transition-all" />
+                        </div>
+
+                        <!-- Category Filter -->
+                        <div class="relative w-44">
+                            <select id="article-category-filter"
+                                class="w-full appearance-none bg-white border border-border-subtle rounded-lg pl-3 pr-8 py-1.5 font-body-sm outline-none focus:ring-2 focus:ring-secondary transition-all">
+                                <option value="">Semua Kategori</option>
+                                <option value="Unclustered">Belum Diklasifikasi</option>
+                            </select>
+                            <span
+                                class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted text-sm">expand_more</span>
+                        </div>
+
+                        <!-- Date Filters -->
+                        <div
+                            class="flex items-center gap-2 bg-white border border-border-subtle rounded-lg px-2.5 py-1 shadow-sm">
+                            <span class="font-label-sm text-text-muted text-[11px] whitespace-nowrap">Filter
+                                Tanggal:</span>
+                            <input type="date" id="article-start-date-filter"
+                                class="border-none p-0 w-28 font-body-sm text-[12px] outline-none focus:ring-0 cursor-pointer" />
+                            <span class="text-text-muted text-xs">s/d</span>
+                            <input type="date" id="article-end-date-filter"
+                                class="border-none p-0 w-28 font-body-sm text-[12px] outline-none focus:ring-0 cursor-pointer" />
+                            <button id="clear-date-filter-btn"
+                                class="text-text-muted hover:text-error transition-colors text-xs font-bold pl-1 border-l border-slate-200">Reset</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Articles Table Container -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse custom-table">
+                    <thead>
+                        <tr class="border-b border-border-subtle bg-slate-50">
+                            <th class="py-3 px-4 font-label-md text-label-md text-text-muted">JUDUL ARTIKEL</th>
+                            <th class="py-3 px-4 font-label-md text-label-md text-text-muted w-32">SUMBER</th>
+                            <th class="py-3 px-4 font-label-md text-label-md text-text-muted w-32">TANGGAL</th>
+                            <th class="py-3 px-4 font-label-md text-label-md text-text-muted w-44">KATEGORI TREN</th>
+                            <th class="py-3 px-4 font-label-md text-label-md text-text-muted w-24 text-right">AKSI</th>
+                        </tr>
+                    </thead>
+                    <tbody id="articles-tbody" class="font-body-sm">
+                        <tr>
+                            <td colspan="5" class="py-8 text-center text-slate-400">
+                                Memuat artikel berita...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination/Load Indicators -->
+            <div
+                class="bg-slate-50 px-card-padding py-3 border-t border-border-subtle flex justify-between items-center text-xs text-text-muted">
+                <span id="table-results-counter">Menampilkan 0 dari 0 artikel</span>
+                <div class="flex gap-2">
+                    <button id="prev-page-btn"
+                        class="px-3 py-1 bg-white border border-slate-200 rounded hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed">Sebelumnya</button>
+                    <button id="next-page-btn"
+                        class="px-3 py-1 bg-white border border-slate-200 rounded hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed">Selanjutnya</button>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Modal for Reading Full Article Content -->
+    <div id="article-detail-modal" class="modal-overlay">
+        <div class="modal-content max-w-3xl">
+            <div class="modal-header">
+                <div>
+                    <h3 id="modal-article-title"
+                        class="font-headline-md text-slate-900 font-bold text-lg leading-tight">Judul Artikel</h3>
+                    <p id="modal-article-meta" class="font-body-sm text-text-muted mt-1 text-xs">Sumber: Detik |
+                        Tanggal: 13 Juli 2026</p>
+                </div>
+                <span id="close-article-modal-btn"
+                    class="text-2xl text-slate-400 hover:text-slate-600 cursor-pointer font-bold">&times;</span>
+            </div>
+            <div class="modal-body space-y-4">
+                <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex gap-2 items-center">
+                    <span class="text-xs font-bold text-slate-700">Kategori Klaster AI:</span>
+                    <span id="modal-article-category-badge"
+                        class="px-2 py-0.5 rounded text-[10px] font-bold font-label-sm bg-sky-100 text-sky-700">Unclustered</span>
+                </div>
+                <div>
+                    <h4 class="font-label-sm font-bold text-slate-700 mb-1">KONTEN BERITA RAW/CLEAN:</h4>
+                    <div id="modal-article-body"
+                        class="p-4 bg-slate-900 text-slate-100 rounded-lg h-80 overflow-y-auto font-mono text-xs whitespace-pre-wrap leading-relaxed">
+                        Isi artikel...
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a id="modal-article-url-btn" href="#" target="_blank" rel="noopener noreferrer"
+                    class="px-4 py-2 bg-secondary text-white font-label-md rounded-lg hover:opacity-90 transition-opacity font-bold">
+                    Buka Sumber Asli
+                </a>
+                <button id="close-article-modal-footer-btn"
+                    class="px-4 py-2 bg-slate-200 text-slate-700 font-label-md rounded-lg hover:bg-slate-300 transition-colors">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+
+    <script src="/static/common.js"></script>
+    <script src="/static/news_management.js"></script>
+</body>
+
+</html>
