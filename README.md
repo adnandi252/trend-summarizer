@@ -4,9 +4,10 @@ emoji: 📈
 colorFrom: blue
 colorTo: indigo
 sdk: gradio
-sdk_version: 4.19.2
+sdk_version: 5.33.0
 app_file: app.py
 pinned: false
+short_description: AI-powered industry trend analysis dashboard
 ---
 
 # Trend Summarizer AI

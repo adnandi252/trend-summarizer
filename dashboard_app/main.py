@@ -4,13 +4,7 @@ import json
 import asyncio
 import logging
 
-try:
-    import spaces
-    @spaces.GPU
-    def dummy_gpu_task_main():
-        return "Bypass ZeroGPU detection in main"
-except ImportError:
-    pass
+
 from typing import List, Optional, Dict, Any
 from datetime import datetime, timedelta
 from fastapi import FastAPI, BackgroundTasks, HTTPException, Query, Response, status
@@ -70,9 +64,20 @@ app = FastAPI(
 )
 
 # CORS Policy configuration
+# Determine allowed origins — include HF Spaces domains for deployment
+_ALLOWED_ORIGINS = [
+    "http://localhost:3000", "http://localhost:5173",
+    "http://127.0.0.1:3000", "http://127.0.0.1:5173",
+    "http://localhost:8001", "http://127.0.0.1:8001",
+]
+# Add the HF Spaces origin if running on Spaces
+_HF_SPACE = os.environ.get("SPACE_HOST")
+if _HF_SPACE:
+    _ALLOWED_ORIGINS.append(f"https://{_HF_SPACE}")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:3000", "http://127.0.0.1:5173", "http://localhost:8001", "http://127.0.0.1:8001"],
+    allow_origins=_ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
     allow_headers=["*"],
@@ -83,16 +88,25 @@ app.add_middleware(
 async def add_security_headers(request, call_next):
     response = await call_next(request)
     response.headers["X-Content-Type-Options"] = "nosniff"
-    response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    # On HF Spaces, skip X-Frame-Options so Gradio can iframe dashboard pages;
+    # CSP frame-ancestors handles framing security instead.
+    if not os.environ.get("SPACE_HOST"):
+        response.headers["X-Frame-Options"] = "SAMEORIGIN"
     response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
     # Content-Security-Policy (CSP) - Allow static resources, Tailwind CDN, Google Fonts, and images
+    # Build CSP — allow HF Spaces domain for frame-ancestors so Gradio can iframe dashboard pages
+    hf_host = os.environ.get("SPACE_HOST", "")
+    frame_ancestors = "'self'"
+    if hf_host:
+        frame_ancestors += f" https://{hf_host}"
     response.headers["Content-Security-Policy"] = (
         "default-src 'self'; "
         "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; "
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
         "font-src 'self' https://fonts.gstatic.com; "
         "img-src 'self' data: https://lh3.googleusercontent.com; "
-        "connect-src 'self';"
+        "connect-src 'self'; "
+        f"frame-ancestors {frame_ancestors};"
     )
     return response
 

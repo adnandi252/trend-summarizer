@@ -6,7 +6,6 @@ Sastrawi
 networkx
 transformers
 torch
-streamlit
 rouge-score
 pandas
 numpy
@@ -19,5 +18,6 @@ feedparser
 requests
 python-multipart
 jinja2
+gradio>=5.0.0
 spaces
-huggingface_hub==0.23.2
+huggingface_hub
