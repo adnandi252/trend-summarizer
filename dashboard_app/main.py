@@ -738,6 +738,7 @@ def read_health():
 # --- Frontend Static Routes ---
 
 @app.get("/", response_class=FileResponse)
+@app.head("/", response_class=FileResponse)
 def serve_index():
     """Serves the main dashboard page."""
     return FileResponse(os.path.join(STATIC_DIR, "dashboard.html"))
