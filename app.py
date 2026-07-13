@@ -102,7 +102,7 @@ if __name__ == "__main__":
     print(f"Starting server on port {PORT}...")
 
     # Launch Gradio server (handles port binding — only ONE server)
-    # prevent_thread_lock=True so we can mount FastAPI after
+    # prevent_thread_lock=True so we can configure routes after
     demo.launch(
         server_name="0.0.0.0",
         server_port=PORT,
@@ -110,15 +110,21 @@ if __name__ == "__main__":
         share=False,
     )
 
-    # Mount the entire FastAPI app as a sub-application on Gradio's
-    # internal FastAPI. Gradio's own routes (/gradio-api/*, etc.) take
-    # priority because they are registered first. Unmatched paths
-    # (our /api/*, /dashboard.html, /static/*, etc.) fall through to
-    # the FastAPI sub-app.
-    demo.app.mount("/", fastapi_app)
+    # Mount FastAPI at a hidden path solely for lifespan event propagation.
+    # This ensures @app.on_event("startup") handlers in main.py fire
+    # (project reset, weekly scheduler, etc.)
+    demo.app.mount("/_internal", fastapi_app)
 
-    print("✅ FastAPI routes mounted on Gradio server. Dashboard is ready.")
+    # Insert all FastAPI routes at the BEGINNING of Gradio's route list.
+    # Gradio has a catch-all route (/{path:path}) that intercepts every
+    # request. By inserting our routes first, paths like /dashboard.html,
+    # /api/*, /static/*, / are matched BEFORE Gradio's catch-all.
+    for route in reversed(list(fastapi_app.routes)):
+        demo.app.routes.insert(0, route)
+
+    print("✅ FastAPI routes injected into Gradio server. Dashboard is ready.")
 
     # Keep the main thread alive (Gradio server runs in background thread)
     import threading
     threading.Event().wait()
+
