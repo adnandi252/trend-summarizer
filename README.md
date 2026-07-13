@@ -3,9 +3,7 @@ title: Trend Summarizer AI
 emoji: 📈
 colorFrom: blue
 colorTo: indigo
-sdk: gradio
-sdk_version: 5.33.0
-app_file: app.py
+sdk: docker
 pinned: false
 short_description: AI-powered industry trend analysis dashboard
 ---
@@ -20,5 +18,5 @@ A premium web dashboard prototype for automated industry trend scraping, cluster
    ```
 2. Run FastAPI:
    ```bash
-   python app.py
+   uvicorn dashboard_app.main:app --host 127.0.0.1 --port 8001 --reload
    ```
