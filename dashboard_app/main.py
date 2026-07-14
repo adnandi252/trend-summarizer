@@ -380,6 +380,8 @@ def execute_analyze_task(project_id: int, model_source: str = "local", groq_api_
                 summaries = json.load(f)
             db.insert_summaries(project_id, summaries, analysis_period=analysis_period)
             
+
+
         db.update_project_status(project_id, "completed")
         add_pipeline_log(project_id, "STATUS: SELURUH PROSES ANALISIS SELESAI! Dashboard terupdate.")
         logger.info(f"Analysis completed successfully for Project {project_id}.")
@@ -725,6 +727,8 @@ def api_submit_project_feedback(project_id: int, payload: FeedbackCreate):
             detail="Failed to save feedback to database."
         )
 
+
+
 @app.get("/api/health")
 def read_health():
     """Health check status endpoint."""
@@ -762,6 +766,7 @@ def serve_executive_brief():
 def serve_news_management():
     """Serves the news management page."""
     return FileResponse(os.path.join(STATIC_DIR, "news_management.html"))
+
 
 # Mount Static Files for js, css, etc.
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")

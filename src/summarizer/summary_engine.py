@@ -283,7 +283,42 @@ class SummaryEngine:
                 else:
                     json_str = raw_response
                 
-                parsed_data = json.loads(json_str, strict=False)
+                try:
+                    parsed_data = json.loads(json_str, strict=False)
+                except Exception as je:
+                    logger.warning(f"Standard JSON parsing failed, attempting regex extraction: {je}")
+                    parsed_data = {}
+                    import re
+                    
+                    # Extract generative_brief
+                    brief_match = re.search(r'"generative_brief"\s*:\s*"(.*?)"\s*,\s*"market_opportunities"', json_str, re.DOTALL)
+                    if not brief_match:
+                        brief_match = re.search(r'"generative_brief"\s*:\s*"(.*?)"\s*,\s*"', json_str, re.DOTALL)
+                    if brief_match:
+                        parsed_data["generative_brief"] = brief_match.group(1).replace('\\n', '\n')
+                    else:
+                        parsed_data["generative_brief"] = ""
+                        
+                    # Extract market_opportunities
+                    opp_match = re.search(r'"market_opportunities"\s*:\s*\[(.*?)\]', json_str, re.DOTALL)
+                    opportunities = []
+                    if opp_match:
+                        opps_block = opp_match.group(1)
+                        item_matches = re.findall(r'\{\s*"title"\s*:\s*"(.*?)"\s*,\s*"desc"\s*:\s*"(.*?)"\s*\}', opps_block, re.DOTALL)
+                        for title, desc in item_matches:
+                            opportunities.append({"title": title, "desc": desc})
+                    parsed_data["market_opportunities"] = opportunities
+                    
+                    # Extract consumer_behavior
+                    cb_match = re.search(r'"consumer_behavior"\s*:\s*\[(.*?)\]', json_str, re.DOTALL)
+                    behavior = []
+                    if cb_match:
+                        cb_block = cb_match.group(1)
+                        item_matches = re.findall(r'\{\s*"title"\s*:\s*"(.*?)"\s*,\s*"desc"\s*:\s*"(.*?)"\s*\}', cb_block, re.DOTALL)
+                        for title, desc in item_matches:
+                            behavior.append({"title": title, "desc": desc})
+                    parsed_data["consumer_behavior"] = behavior
+                    
                 return {
                     "generative_brief": parsed_data.get("generative_brief", ""),
                     "market_opportunities": parsed_data.get("market_opportunities", []),

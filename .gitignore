@@ -21,7 +21,6 @@ data/*
 
 # Exclude unused modules from Git push
 backend/
-evaluation/
 plans/
 scratch/
 data_analysis.ipynb

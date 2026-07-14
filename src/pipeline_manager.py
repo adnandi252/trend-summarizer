@@ -40,6 +40,16 @@ def run_full_pipeline(queries: list, limit_per_query: int = 5, lang: str = "id",
     from src.summarizer.summary_engine import run_summarization_pipeline
     run_summarization_pipeline(input_path=clustered_path, output_path=report_path)
     
+    # 6. Run Evaluation against Ground Truth
+    eval_output_path = "data/evaluation_results.json"
+    logger.info("Step 6: Running evaluation against ground truth...")
+    try:
+        from src.evaluation.eval_summary import evaluate_summaries
+        evaluate_summaries(report_path=report_path, ground_truth_path="evaluation/ground_truth.json", output_path=eval_output_path)
+        logger.info("Evaluation completed successfully.")
+    except Exception as e:
+        logger.error(f"Evaluation failed: {e}")
+        
     logger.info("================ PIPELINE COMPLETED SUCCESSFULLY ================")
 
 if __name__ == "__main__":
