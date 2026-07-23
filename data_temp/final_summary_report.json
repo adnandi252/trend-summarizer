@@ -1,0 +1,221 @@
+{
+    "Consumer Behavior Shift": {
+        "trend_category": "Consumer Behavior Shift",
+        "article_count": 7,
+        "top_keywords": [
+            "harga",
+            "konsumen",
+            "beli",
+            "ritel",
+            "mal",
+            "perilaku",
+            "jual",
+            "turun"
+        ],
+        "extractive_brief": "Bloomberg Technoz, Jakarta - Pelaku usaha ritel di segmen fast moving consumer goods (FMCG) atau produk ritel utama mengakui kenaikan harga sejumlah produk mendorong konsumen menjadi lebih selektif dan mulai beralih ke merek dengan harga yang lebih terjangka selain faktor musiman. \"Pada umumnya tekanan daya beli ini membuat konsumen lebih sensitif terhadap harga dan dapat mengubah preferensi konsumen, mereka condong untuk membeli produk-produk single pack dengan harga yang lebih terjangkau,\" ujar manajemen Mayora kepada Kontan.co.id, Senin (6/7/2026). Di tengah dinamika perilaku konsumen tersebut, Ferry berpendapat bahwa kunci sukses ruang ritel atau mal terletak pada bauran penyewa, pengalaman belanja, dan jumlah pengunjung. Penjualan kelompok ini juga diperkirakan akan kembali melemah jadi -4,5% pada Juni. Konsumen Kini Lebih Aktif Membandingkan Harga\n\nKehadiran aplikasi ritel dan platform belanja membuat konsumen memiliki akses terhadap informasi harga secara real time.",
+        "generative_brief": "**Executive Brief**\n1. Tren Utama: Terjadi pergeseran perilaku konsumen FMCG di Indonesia menuju sensitivitas harga yang lebih tinggi, didorong kenaikan harga produk yang memicu pembelian merek lebih terjangkau dan ukuran kemasan single pack.\n2. Ringkasan: Manajemen Mayora mengakui tekanan daya beli mengubah preferensi konsumen ke produk single pack (Kontan.co.id, 6/7/2026). Penjualan ritel diperkirakan melemah -4,5% pada Juni 2026. Kehadiran aplikasi ritel dan platform belanja mempercepat transparansi harga real-time. Pakar ritel Ferry menilai kunci kesuksesan mal bergantung pada bauran penyewa, pengalaman belanja, dan lalu lintas pengunjung.\n3. Sentimen Pasar: Sentimen konsumen bersifat defensif dan rasional; daya beli tertekan memaksa prioritas nilai uang (value for money) di atas loyalitas merek. Pelaku usaha menghadapi tekanan volume penjualan dan margin di tengah biaya operasional yang naik.\n4. Rekomendasi: Perluas portofolio produk single pack/entry price point untuk menangkap segmen harga sensitif. Optimalkan strategi harga dinamis dan kehadiran di platform perbandingan harga. Tingkatkan pengalaman belanja offline (experiential retail) dan kurasi tenant untuk menarik lalu lintas pengunjung ke fisik.",
+        "market_opportunities": [
+            {
+                "title": "Ekspansi Produk Kemasan Kecil (Single Pack)",
+                "desc": "Permintaan pada kemasan single pack melonjak sebagai respons tekanan daya beli, membuka peluang margin volume bagi produsen FMCG yang menyesuaikan SKU entry-level."
+            },
+            {
+                "title": "Integrasi Omnichannel & Transparansi Harga",
+                "desc": "Konsumen aktif membandingkan harga via aplikasi ritel mendorong kebutuhan manajemen harga real-time dan kehadiran brand di marketplace serta aplikasi ritel modern untuk menjangkau pembeli rasional."
+            }
+        ],
+        "consumer_behavior": [
+            {
+                "title": "Switching Merek Berbasis Harga (Downtrading)",
+                "desc": "Konsumen mengurangi loyalitas merek premium dan beralih ke merek alternatif atau merek distributor (private label) yang menawarkan harga lebih rendah dengan kualitas yang diterima."
+            },
+            {
+                "title": "Pembelian Berbasis Kebutuhan Instan & Perbandingan Real-time",
+                "desc": "Pola beli berubah dari stok bulanan ke pembelian frekuensi tinggi volume kecil (single pack), didukung akses informasi harga instan melalui platform digital untuk memastikan nilai terbaik."
+            }
+        ],
+        "articles": [
+            {
+                "id": 1,
+                "title": "Kenaikan Harga Ubah Pola Belanja, FMCG Murah Jadi Buruan - Bloomberg Technoz",
+                "url": "https://www.bloombergtechnoz.com/detail-news/114473/kenaikan-harga-ubah-pola-belanja-fmcg-murah-jadi-buruan",
+                "source": "Bloomberg Technoz",
+                "publish_date": "Thu, 09 Jul 2026 08:30:00 GMT"
+            },
+            {
+                "id": 2,
+                "title": "Emiten FMCG Tetap Optimistis Hadapi Semester II-2026 Meski Daya Beli Melemah - kontan.co.id",
+                "url": "https://industri.kontan.co.id/news/emiten-fmcg-tetap-optimistis-hadapi-semester-ii-2026-meski-daya-beli-melemah",
+                "source": "kontan.co.id",
+                "publish_date": "Thu, 09 Jul 2026 10:01:25 GMT"
+            },
+            {
+                "id": 10,
+                "title": "Konsumen Semakin ”Pilih-pilih”, Ritel Ubah Konsep - Kompas.id",
+                "url": "https://www.kompas.id/artikel/konsumen-semakin-pilih-pilih-ritel-ubah-konsep",
+                "source": "Kompas.id",
+                "publish_date": "Mon, 13 Jul 2026 06:49:00 GMT"
+            },
+            {
+                "id": 11,
+                "title": "Ketika Waktu Tidak Lagi Menjadi Pertimbangan: Investigasi Faktor-Faktor Penentu dan Konsekuensi Perilaku Showrooming di Era Berbasis Kecerdasan Buatan (AI) - Universitas Airlangga Official Website",
+                "url": "https://unair.ac.id/ketika-waktu-tidak-lagi-menjadi-pertimbangan-investigasi-faktor-faktor-penentu-dan-konsekuensi-perilaku-showrooming-di-era-berbasis-kecerdasan-buatan-ai/",
+                "source": "Universitas Airlangga Official Website",
+                "publish_date": "Fri, 10 Jul 2026 03:46:00 GMT"
+            },
+            {
+                "id": 12,
+                "title": "Kenaikan Harga Ubah Pola Belanja, FMCG Murah Jadi Buruan - Sektor Riil - Bloomberg Technoz",
+                "url": "https://www.bloombergtechnoz.com/detail-news/114473/kenaikan-harga-ubah-pola-belanja-fmcg-murah-jadi-buruan/2",
+                "source": "Bloomberg Technoz",
+                "publish_date": "Thu, 09 Jul 2026 08:30:00 GMT"
+            },
+            {
+                "id": 13,
+                "title": "The Fed tunjuk mantan CEO Walmart untuk tingkat... - Pluang",
+                "url": "https://pluang.com/news-feed/walmart-bantu-fed-pantau-data-ekonomi-as-waktu-nyata",
+                "source": "Pluang",
+                "publish_date": "Thu, 09 Jul 2026 22:05:21 GMT"
+            },
+            {
+                "id": 14,
+                "title": "Promo Digital Membentuk Kebiasaan Belanja Baru - Jatimnet.com",
+                "url": "https://jatimnet.com/promo-digital-membentuk-kebiasaan-belanja-baru",
+                "source": "Jatimnet.com",
+                "publish_date": "Sun, 12 Jul 2026 08:00:00 GMT"
+            }
+        ]
+    },
+    "Digital Marketing": {
+        "trend_category": "Digital Marketing",
+        "article_count": 3,
+        "top_keywords": [
+            "indonesia",
+            "pasar",
+            "negara",
+            "pamer",
+            "pangsa",
+            "pimpin",
+            "pangsa pasar",
+            "milik"
+        ],
+        "extractive_brief": "A+ A-\n\nRM.id Rakyat Merdeka - Perusahaan penyelenggara pameran bisnis internasional (B2B) di Rusia, ITE Group terus memperluas kolaborasi dengan negara-negara yang memiliki potensi ekspor tinggi, termasuk Indonesia. Dalam kunjungannya, CEO ITE Group Dmitry Zavgorodniy mengatakan, hal tersebut merupakan bagian dari komitmen perusahaan untuk memperkuat hubungan dagang Indonesia dan Rusia, sekaligus memperkenalkan berbagai peluang bisnis yang dapat dimanfaatkan pelaku usaha Indonesia melalui jaringan pameran internasional ITE. Berikut pangsa pasar mi instan Indonesia berdasarkan merek:\n\nIndomie (Indofood CBP): sekitar 71% pangsa pasar. Dengan pangsa pasar sekitar 14%, Mie Sedaap menjadi pesaing utama Indomie di pasar domestik. Pengalaman minimal 5 tahun di bidang FMCG, dengan keberhasilan yang terbukti di kategori produk minuman kesehatan atau vitamin, makanan dan minuman.",
+        "generative_brief": "**Executive Brief**\n1. Tren Utama: Pemanfaatan platform digital untuk promosi pameran B2B internasional menjadi tren dalam digital marketing, seperti yang dilakukan ITE Group dalam memperkuat hubungan dagang Indonesia-Rusia.\n2. Ringkasan: ITE Group memperluas kolaborasi dengan Indonesia melalui pameran B2B di Rusia. Di pasar mi instan domestik, Indomie menguasai 71% pangsa pasar, diikuti Mie Sedaap 14%, menunjukkan dominasi merek yang kuat.\n3. Sentimen Pasar: Sentimen positif terhadap peluang ekspor melalui pameran B2B, serta loyalitas konsumen yang tinggi terhadap merek mi instan tertentu.\n4. Rekomendasi: Manfaatkan pameran B2B sebagai ajang promosi digital dan gunakan data pangsa pasar untuk strategi pemasaran yang lebih tertarget.",
+        "market_opportunities": [
+            {
+                "title": "Pameran B2B Internasional",
+                "desc": "Peluang bagi pelaku usaha Indonesia untuk mempromosikan produk secara digital melalui pameran B2B yang diselenggarakan ITE Group di Rusia."
+            },
+            {
+                "title": "Penetrasi Pasar Mi Instan",
+                "desc": "Dominasi Indomie menunjukkan pasar mi instan besar, membuka peluang bagi merek lain untuk bersaing dengan strategi digital marketing yang inovatif."
+            }
+        ],
+        "consumer_behavior": [
+            {
+                "title": "Loyalitas Merek",
+                "desc": "Konsumen mi instan Indonesia sangat loyal pada merek tertentu, dengan Indomie sebagai pemimpin pasar."
+            },
+            {
+                "title": "Minat Ekspansi Bisnis",
+                "desc": "Pelaku usaha Indonesia antusias mengikuti pameran B2B internasional untuk memperluas jangkauan pasar."
+            }
+        ],
+        "articles": [
+            {
+                "id": 3,
+                "title": "Gelar MosBuild 2026, ITE Group Buka Pasar Furnitur Indonesia Ke Eropa & Rusia - RM.ID",
+                "url": "https://rm.id/baca-berita/ekonomi-bisnis/317050/gelar-mosbuild-2026-ite-group-buka-pasar-furnitur-indonesia-ke-eropa-rusia",
+                "source": "RM.ID",
+                "publish_date": "Thu, 09 Jul 2026 08:34:00 GMT"
+            },
+            {
+                "id": 4,
+                "title": "Siapa Penguasa Pasar Mi Instan Indonesia? - TrenAsia",
+                "url": "https://www.trenasia.id/tren-ekbis/siapa-penguasa-pasar-mi-instan-indonesia",
+                "source": "TrenAsia",
+                "publish_date": "Mon, 13 Jul 2026 00:48:51 GMT"
+            },
+            {
+                "id": 15,
+                "title": "Finance dan Sales , Cek Lowongan Kerja PT Djojonegoro C-1000 Lulusan Sarjana - MetroTVNews.com",
+                "url": "https://www.metrotvnews.com/read/bJECjQXy-finance-dan-sales-cek-lowongan-kerja-pt-djojonegoro-c-1000-lulusan-sarjana",
+                "source": "MetroTVNews.com",
+                "publish_date": "Tue, 07 Jul 2026 13:47:55 GMT"
+            }
+        ]
+    },
+    "SME Digitalization": {
+        "trend_category": "SME Digitalization",
+        "article_count": 5,
+        "top_keywords": [
+            "umkm",
+            "metro",
+            "department store",
+            "department",
+            "metro department",
+            "store",
+            "ritel modern",
+            "modern"
+        ],
+        "extractive_brief": "Kemitraan dengan Metro Department Store, lanjut dia, mencerminkan semakin meningkatnya kualitas produk UMKM Indonesia sehingga mampu memenuhi standar ritel modern dan diterima pasar. “Kami sangat menyambut baik program yang diinisiasi Kemendag untuk terus mendorong UMKM lokal berkembang melalui kemitraan dengan ritel modern.”\n\nSementara itu, Sekar Hapsari, pendiri Bhumitala, salah satu UMKM fesyen terpilih yang menjadi mitra pemasok Metro Department Store, mengapresiasi Kemendag dan Metro Department Store atas kesempatan yang diberikan kepada pelaku usaha lokal. --\n\nMETRO Department Store berkolaborasi dengan Kementerian Perdagangan (Kemendag) RI akses pasar produk UMKM ke jaringan ritel modern. Acara \"Launching Akses Pasar Produk UMKM ke Jaringan Metro Department Store\" dimulai dengan penandatanganan MoU antara Kemendag dan METRO. Menurutnya, masuknya produk dari 11 UMKM tersebut ke jaringan Metro Department Store menjadi bukti bahwa produk lokal mampu memenuhi standar ritel modern dan bersaing dengan produk impor.",
+        "generative_brief": "**Executive Brief** \n1. Tren Utama: Terdapat tren yang jelas dalam akselerasi digitalisasi dan formalisasi UMKM Indonesia melalui kemitraan strategis dengan pemain ritel modern. Berita spesifik menunjukkan adanya kolaborasi antara METRO Department Store dengan Kementerian Perdagangan (Kemendag) RI untuk membuka akses pasar produk UMKM ke jaringan ritel modern. Inisiatif ini ditandai dengan penandatanganan MoU dan masuknya 11 UMKM lokal sebagai pemasok, yang menjadi bukti konkret peningkatan kualitas produk UMKM sehingga mampu memenuhi standar ritel modern dan bersaing dengan produk impor.\n2. Ringkasan: Kementerian Perdagangan (Kemendag) RI dan METRO Department Store meluncurkan program 'Akses Pasar Produk UMKM ke Jaringan Metro Department Store' melalui penandatanganan Memorandum of Understanding (MoU). Program ini berhasil memfasilitasi masuknya produk dari 11 UMKM lokal, termasuk UMKM fesyen seperti Bhumitala yang didirikan oleh Sekar Hapsari, ke dalam jaringan ritel METRO. Langkah ini merupakan bagian dari inisiatif Kemendag untuk terus mendorong UMKM lokal berkembang dan membuktikan kesiapan produk lokal untuk menembus pasar modern.\n3. Sentimen Pasar: Sentimen yang tergambar adalah positif dan optimistis, namun tetap objektif dan berbasis pencapaian. Pihak-pihak seperti pendiri Bhumitala (Sekar Hapsari) menyambut baik kesempatan yang diberikan, sementara METRO Department Store menyambut baik program dari Kemendag. Fokus sentimen adalah pada pengakuan atas peningkatan kualitas produk UMKM dan kelayakan bersaing di pasar modern, bukan sekadar narasi promosi.\n4. Rekomasi: Bagi pelaku bisnis UMKM, langkah taktis adalah proaktif mempersenjatai diri dengan standar kualitas, pengemasan, dan operasional yang memenuhi kriteria ritel modern. Secara strategis, pelaku bisnis perlu membangun kemitraan atau menjalin komunikasi dengan program-program pemerintah seperti Kemendag yang menjadi penghubung ke jaringan ritel formal. Sementara bagi pelaku ritel, rekomendasinya adalah memperluas dan memperdalam program serupa untuk diversifikasi pasokan lokal dan memperkuat nilai kompetitif.",
+        "market_opportunities": [
+            {
+                "title": "Penetrasi UMKM ke Ritel Modern",
+                "desc": "Adanya peluang jelas bagi UMKM dengan produk berkualitas untuk memasuki jaringan ritel modern seperti METRO Department Store melalui program kemitraan dengan lembaga pemerintah seperti Kemendag."
+            },
+            {
+                "title": "Pengembangan Model Kemitraan Publik-Swasta",
+                "desc": "Tersedianya peluang untuk replikasi model kerja sama antara Kementerian Perdagangan (sektor publik) dan jaringan ritel swasta dalam mengakselarasi akses pasar produk lokal UMKM."
+            }
+        ],
+        "consumer_behavior": [
+            {
+                "title": "Peningkatan Kepercayaan pada Produk Lokal",
+                "desc": "Adanya pergeseran persepsi di mana produk UMKM lokal semakin diterima di pasar formal (ritel modern), yang ditunjukkan dengan masuknya produk UMKM ke jaringan METRO Department Store."
+            },
+            {
+                "title": "Permintaan terhadap Standar Kualitas Ritel Modern",
+                "desc": "Konsumen di rantai ritel modern mengharapkan produk lokal memenuhi standar kualitas, pengemasan, dan kebersihan yang sama dengan produk impor, sebuah standar yang kini dipenuhi oleh UMKM terpilih."
+            }
+        ],
+        "articles": [
+            {
+                "id": 5,
+                "title": "Menteri UMKM: Ritel modern, koperasi, dan warung harus saling dukung - ANTARA News",
+                "url": "https://www.antaranews.com/berita/5642737/menteri-umkm-ritel-modern-koperasi-dan-warung-harus-saling-dukung",
+                "source": "ANTARA News",
+                "publish_date": "Thu, 09 Jul 2026 12:09:18 GMT"
+            },
+            {
+                "id": 6,
+                "title": "Mendag Busan Dukung Sinergi UMKM Fesyen dan Ritel Modern - Tempo.co",
+                "url": "https://www.tempo.co/info-tempo/mendag-busan-dukung-sinergi-umkm-fesyen-dan-ritel-modern-2274987",
+                "source": "Tempo.co",
+                "publish_date": "Fri, 10 Jul 2026 11:37:20 GMT"
+            },
+            {
+                "id": 7,
+                "title": "Kolaborasi METRO dan Kemendag Antar Produk UMKM Tembus Ritel Modern - CNN Indonesia",
+                "url": "https://www.cnnindonesia.com/gaya-hidup/20260709164808-284-1378825/kolaborasi-metro-dan-kemendag-antar-produk-umkm-tembus-ritel-modern",
+                "source": "CNN Indonesia",
+                "publish_date": "Thu, 09 Jul 2026 10:00:20 GMT"
+            },
+            {
+                "id": 8,
+                "title": "Mendag Dorong Produk UMKM Kuasai Ritel Modern - Sudutpandang.id",
+                "url": "https://sudutpandang.id/mendag-dorong-produk-umkm-kuasai-ritel-modern/",
+                "source": "Sudutpandang.id",
+                "publish_date": "Thu, 09 Jul 2026 12:57:12 GMT"
+            },
+            {
+                "id": 9,
+                "title": "Kemendag Perkuat Sinergi UMKM dan Ritel Modern, 11 Jenama Lokal Jadi Mitra Metro Department Store - Kompas.com",
+                "url": "https://nasional.kompas.com/read/2026/07/10/11392051/kemendag-perkuat-sinergi-umkm-dan-ritel-modern-11-jenama-lokal-jadi-mitra",
+                "source": "Kompas.com",
+                "publish_date": "Fri, 10 Jul 2026 04:39:00 GMT"
+            }
+        ]
+    }
+}

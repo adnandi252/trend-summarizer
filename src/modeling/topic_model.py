@@ -13,59 +13,28 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Reference keywords for each target category in Indonesian and English
+# Only 3 target categories as required by the dashboard
 REFERENCE_KEYWORDS = {
     "Sustainability": [
         "keberlanjutan", "lingkungan", "hijau", "eco", "ramah", "sustainability", 
         "sampah", "plastik", "daur", "ulang", "emisi", "karbon", "energi", "green",
         "esg", "sosial", "tanggung", "jawab", "limbah", "pohon", "alam", "bumi",
-        "iklim", "klimat", "berkelanjutan", "organik", "biodegradable"
+        "iklim", "klimat", "berkelanjutan", "organik", "biodegradable", "ramah lingkungan",
+        "terbarukan", "polusi", "konservasi", "net zero", "carbon", "recycle", "eco-friendly"
     ],
     "Digital Marketing": [
         "marketing", "digital", "pemasaran", "kampanye", "campaign", "iklan", "ads",
         "media", "sosial", "konten", "promosi", "brand", "influencer", "tiktok",
         "instagram", "facebook", "youtube", "branding", "strategi", "pesan",
-        "iklan", "kreatif", "audiens", "target", "engagement", "views", "followers"
+        "kreatif", "audiens", "target", "engagement", "views", "followers", "seo",
+        "content", "marketing strategy", "social media", "digital campaign"
     ],
     "Consumer Behavior Shift": [
         "perilaku", "konsumen", "perubahan", "shift", "belanja", "online", "toko",
         "fisik", "e-commerce", "transaksi", "pasar", "digitalisasi", "beli",
         "kebutuhan", "tren", "shopee", "tokopedia", "gaya", "hidup", "masyarakat",
-        "ekonomi", "keuangan", "bayar", "cashless", "dompet", "digital", "mudah"
-    ],
-    "Fintech & Payment Gateway": [
-        "fintech", "qris", "pembayaran", "digital", "bank", "perbankan", "cashless",
-        "transaksi", "dompet", "digital payment", "paylater", "e-wallet", "bi",
-        "nontunai", "keuangan", "digitalisasi", "payment", "gateway", "transfer"
-    ],
-    "SME Digitalization": [
-        "umkm", "koperasi", "lokal", "digitalisasi", "naik kelas", "onboarding",
-        "kementerian", "pelatihan", "usaha mikro", "binaan", "go digital", "kecil",
-        "menengah", "pemberdayaan", "bisnis lokal", "pendampingan", "digital"
-    ],
-    "E-commerce & Social Commerce": [
-        "e-commerce", "shopee", "tokopedia", "lazada", "tiktok shop", "live shopping",
-        "marketplace", "transaksi online", "retail online", "toko online", "belanja",
-        "daring", "platform", "penjual", "pembeli", "merchant", "checkout"
-    ],
-    "Modern Retail & Supply Chain": [
-        "ritel modern", "minimarket", "supermarket", "logistik", "rantai pasok",
-        "supply chain", "distribusi", "pergudangan", "pasokan", "distribusi barang",
-        "toko modern", "ritel", "retail", "pengiriman", "gudang", "stok", "komoditas"
-    ],
-    "F&B Industry & Culinary Trends": [
-        "f&b", "kuliner", "makanan", "minuman", "kristainterfood", "restoran", "kafe",
-        "ekspor f&b", "olahan pangan", "industri makanan", "pangan", "halal", "saji",
-        "olahan", "rasa", "sertifikasi", "kristafood", "pameran"
-    ],
-    "Circular Economy & Plastic Waste": [
-        "limbah plastik", "sampah kemasan", "ekonomi sirkular", "daur ulang",
-        "bank sampah", "unilever", "p&g", "sedotan kertas", "pemilahan sampah",
-        "sirkular", "plastik", "limbah", "kemasan", "daur", "ulang", "lingkungan"
-    ],
-    "Local Brand Empowerment": [
-        "brand lokal", "produk dalam negeri", "bangga buatan indonesia",
-        "karya anak bangsa", "local pride", "produk lokal", "buatan indonesia",
-        "lokal", "brand", "kosmetik", "fesyen", "merek lokal", "dukung lokal"
+        "ekonomi", "keuangan", "bayar", "cashless", "dompet", "mudah", "konsumer",
+        "kebiasaan", "pola", "pengeluaran", "daya beli", "preferensi", "pergeseran"
     ]
 }
 

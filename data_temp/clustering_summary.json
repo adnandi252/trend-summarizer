@@ -1,0 +1,72 @@
+{
+    "category_counts": {
+        "Sustainability": 0,
+        "Digital Marketing": 3,
+        "Consumer Behavior Shift": 7,
+        "Fintech & Payment Gateway": 0,
+        "SME Digitalization": 5,
+        "E-commerce & Social Commerce": 0,
+        "Modern Retail & Supply Chain": 0,
+        "F&B Industry & Culinary Trends": 0,
+        "Circular Economy & Plastic Waste": 0,
+        "Local Brand Empowerment": 0
+    },
+    "cluster_mapping": {
+        "2": "Consumer Behavior Shift",
+        "1": "SME Digitalization",
+        "0": "Digital Marketing"
+    },
+    "category_keywords": {
+        "Consumer Behavior Shift": [
+            "harga",
+            "konsumen",
+            "beli",
+            "ritel",
+            "mal",
+            "perilaku",
+            "jual",
+            "turun",
+            "belanja",
+            "informasi",
+            "teliti",
+            "ubah",
+            "musim",
+            "time",
+            "tingkat"
+        ],
+        "SME Digitalization": [
+            "umkm",
+            "metro",
+            "department store",
+            "department",
+            "metro department",
+            "store",
+            "ritel modern",
+            "modern",
+            "lokal",
+            "ritel",
+            "kemendag",
+            "pasar",
+            "produk umkm",
+            "produk lokal",
+            "perintah"
+        ],
+        "Digital Marketing": [
+            "indonesia",
+            "pasar",
+            "negara",
+            "pamer",
+            "pangsa",
+            "pimpin",
+            "pangsa pasar",
+            "milik",
+            "group",
+            "usaha",
+            "manager",
+            "minum",
+            "merek",
+            "alam",
+            "bisnis"
+        ]
+    }
+}
